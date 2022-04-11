@@ -1,0 +1,67 @@
+{# templates/product/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar producto{% endblock %}
+
+{% block body %}
+
+    <!--Block main-->
+    <section class="block-form-product">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-7 d-flex flex-row justify-content-start align-items-center">
+                    <h1>Editar producto</h1>
+                </div>
+                <div class="col-5 d-flex flex-row justify-content-end align-items-center">
+                    <a class="btn btn-warning" href="{{ path('index') }}" role="button">Volver</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+                    {{ form_start(form) }}
+                        {% if form_errors(form) %}
+                            <div class="alert alert-primary" role="alert">
+                                {{ form_errors(form) }}
+                            </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.name, {'label': 'Nombre'}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                {{ form_row(form.code, {'label': 'Código'}) }}
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                {{ form_row(form.category, {'label': 'Categoria'}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                {{ form_row(form.brand, {'label': 'Marca'}) }}
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                {{ form_row(form.price, {'label': 'Precio'}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                {{ form_row(form.description, {'label': 'Descripción', 'attr': {'rows' : '5'}}) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                {{ form_row(form.submit, { 'label': 'Enviar' }) }}
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Fin Block main-->
+
+{% endblock %}

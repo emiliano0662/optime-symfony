@@ -1,0 +1,24 @@
+.block-form-product {
+    margin-bottom: 60px;
+
+    // Breakpoints
+    @include respond-to($phone) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($phone-tablet) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($tablet-medium) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($medium-large) {
+        margin-bottom: 30px;
+    }
+
+    .container {
+        max-width: 750px;
+    }
+}

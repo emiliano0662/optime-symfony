@@ -1,0 +1,19 @@
+index:
+    path: /
+    controller: App\Controller\ProductController::index
+
+new_product:
+    path: /product/new
+    controller: App\Controller\ProductController::new
+
+edit_product:
+    path: /product/edit/{id}
+    controller: App\Controller\ProductController::edit
+    requirements:
+        id: '\d+'
+
+export_spreadsheet:
+    path: /export_spreadsheet
+    controller: App\Controller\DemoPhpSpreadsheetController::index
+    requirements:
+        id: '\d+'

@@ -1,0 +1,48 @@
+.block-dashboard-main {
+    margin-bottom: 60px;
+
+    // Breakpoints
+    @include respond-to($phone) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($phone-tablet) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($tablet-medium) {
+        margin-bottom: 30px;
+    }
+
+    @include respond-to($medium-large) {
+        margin-bottom: 30px;
+    }
+
+    .table {
+        margin-bottom: 0px;
+
+        thead {
+
+            tr {
+                
+                th {
+                    
+                    &:first-child {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        tbody {
+
+            tr {
+                
+                th {
+                    width: 75px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "optime-symfony",
+  "version": "1.0.0",
+  "description": "Entorno base",
+  "main": "webpack.config.js",
+  "scripts": {
+    "prod": "webpack --config webpack.config.prod.js",
+    "dev": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "Emiliano carreño",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.0",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:emiliano0662/optime-symfony.git"
+  },
+  "homepage": "https://bitbucket.org/emiliano0662/optime-symfony/src/master/#readme"
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Optime Consulting - {% block title %}Prueba de Symfony{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ absolute_url(asset('img/favicon.ico')) }}" sizes="any">
+    <link rel="stylesheet" type="text/css" href="{{ absolute_url(asset('css/bundle.min.css')) }}">
+</head>
+
+<body>
+    <!--header-->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid container-lg">
+                <a class="navbar-brand" href="{{ path('index') }}">
+                    <img src="{{ absolute_url(asset('img/logo_en.svg')) }}" alt="Logo" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('new_product') }}">Agregar producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('index') }}">Productos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Fin header-->
+    {% block body %}{% endblock %}
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>Copyright 1998-2022 © Optime Consulting. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Fin footer-->
+    <script type="text/javascript" src="{{ absolute_url(asset('js/bundle.min.js')) }}"></script>
+</body>
+
+</html>

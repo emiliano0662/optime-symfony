@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+a {
+    text-decoration: none !important;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    outline: 0px;
+}
+
+html {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    padding-top: 140px;
+    position: relative;
+    overflow: hidden;
+    background: #FFFFFF;
+
+    // Breakpoints
+    @include respond-to($phone) {
+        padding-top: 100px;
+    }
+
+    @include respond-to($phone-tablet) {
+        padding-top: 100px;
+    }
+
+    @include respond-to($tablet-medium) {
+        padding-top: 100px;
+    }
+
+    @include respond-to($medium-large) {
+        padding-top: 100px;
+    }
+}
+
+header,
+footer,
+section {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+/*Titulos*/
+h1 {
+    margin-bottom: 0px;
+    padding-right: 20px;
+    float: left;
+    position: relative;
+    line-height: 35px;
+    font-size: 30px;
+    color: #000;
+
+    .badge {
+        line-height: 12px;
+        font-size: 12px;
+    }
+}
+
+/*Parrafos*/
+p {
+    margin-bottom: 0px;
+    letter-spacing: 0;
+    line-height: 22px;
+    font-size: 16px;
+    color: $color-secondary;
+
+    // Breakpoints
+    @include respond-to($phone) {
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    @include respond-to($phone-tablet) {
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    @include respond-to($tablet-medium) {
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    @include respond-to($medium-large) {
+        line-height: 20px;
+        font-size: 15px;
+    }
+}
