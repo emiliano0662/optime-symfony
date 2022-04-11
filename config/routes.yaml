@@ -12,6 +12,12 @@ edit_product:
     requirements:
         id: '\d+'
 
+delete_product:
+    path: /product/delete/{id}
+    controller: App\Controller\ProductController::delete
+    requirements:
+        id: '\d+'
+
 export_spreadsheet:
     path: /export_spreadsheet
     controller: App\Controller\DemoPhpSpreadsheetController::index

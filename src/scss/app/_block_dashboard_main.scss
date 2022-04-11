@@ -30,6 +30,10 @@
                     &:first-child {
                         text-align: center;
                     }
+
+                    &:last-child {
+                        width: 110px;
+                    }
                 }
             }
         }
@@ -41,6 +45,17 @@
                 th {
                     width: 75px;
                     text-align: center;
+                }
+
+                td {
+
+                    &:last-child {
+                        text-align: center;
+
+                        .btn {
+                            margin: 3px;
+                        }
+                    }
                 }
             }
         }

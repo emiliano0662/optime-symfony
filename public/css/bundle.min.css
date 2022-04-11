@@ -13645,9 +13645,18 @@ footer p {
 .block-dashboard-main .table thead tr th:first-child {
   text-align: center;
 }
+.block-dashboard-main .table thead tr th:last-child {
+  width: 110px;
+}
 .block-dashboard-main .table tbody tr th {
   width: 75px;
   text-align: center;
+}
+.block-dashboard-main .table tbody tr td:last-child {
+  text-align: center;
+}
+.block-dashboard-main .table tbody tr td:last-child .btn {
+  margin: 3px;
 }
 
 .block-form-product {

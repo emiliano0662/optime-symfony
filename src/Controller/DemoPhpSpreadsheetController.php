@@ -21,22 +21,34 @@ class DemoPhpSpreadsheetController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $spreadsheet = new Spreadsheet();
-        // Get active sheet - it is also possible to retrieve a specific sheet
+
         $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'ID');
+        $sheet->setCellValue('B1', 'NAME');
+        $sheet->setCellValue('C1', 'DESCRIPTION');
+        $sheet->setCellValue('D1', 'BRAND');
+        $sheet->setCellValue('E1', 'CATEGORY');
+        $sheet->setCellValue('F1', 'PRICE');
 
         $products = $doctrine->getRepository(Product::class)->findAll();
 
-        $arrayData = [
-            [NULL, 2010, 2011, 2012],
-            ['Q1',   12,   15,   21],
-            ['Q2',   56,   73,   86],
-            ['Q3',   52,   61,   69],
-            ['Q4',   30,   32,    0],
-        ];
+        $arrayData = [];
+
+        foreach ($products as $key => $value) {
+            $arrayData[$key][] = $value->getCode();
+            $arrayData[$key][] = $value->getName();
+            $arrayData[$key][] = $value->getDescription();
+            $arrayData[$key][] = $value->getBrand();
+            $arrayData[$key][] = $value->getCategory()->getName();
+            $arrayData[$key][] = $value->getPrice();
+        }
 
         $spreadsheet->getActiveSheet()->fromArray($arrayData, NULL, 'A2');
 
-        $filename = 'Browser_characteristics.xlsx';
+        $dateTime = date('d-m-Y-H-i-s');
+    
+        $filename = "document-".$dateTime.".xlsx";
 
         $contentType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
         $writer = new Xlsx($spreadsheet);
